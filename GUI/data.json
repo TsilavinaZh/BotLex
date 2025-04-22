@@ -1,0 +1,29 @@
+{
+  "intents": [
+    {
+      "tag": "salutation",
+      "patterns": ["Bonjour", "Salut", "Hey"],
+      "responses": ["Bonjour !", "Salut, comment puis-je vous aider ?"]
+    },
+    {
+      "tag": "aurevoir",
+      "patterns": ["Au revoir", "Bye", "À bientôt"],
+      "responses": ["À bientôt !", "Bonne journée !"]
+    },
+    {
+      "tag": "merci",
+      "patterns": ["Merci", "Merci beaucoup"],
+      "responses": ["Avec plaisir !", "Je vous en prie !"]
+    },
+    {
+      "tag": "aide",
+      "patterns": ["J'ai besoin d'aide", "Pouvez-vous m'aider ?", "Aidez-moi"],
+      "responses": ["Bien sûr, comment puis-je vous aider ?", "Je suis là pour vous aider !"]
+    },
+    {
+      "tag": "nom",
+      "patterns": ["Quel est votre nom ?", "Comment vous appelez-vous ?"],
+      "responses": ["Je suis votre assistant virtuel.", "Je suis un chatbot, enchanté de vous rencontrer !"]
+    }
+  ]
+}
