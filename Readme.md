@@ -1,4 +1,4 @@
-# 🤖 BotLex — Offline & Trainable 
+# BotLex — Offline & Trainable 
 
 ![Description de l'image](./image.png)
 
