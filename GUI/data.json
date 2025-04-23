@@ -2,9 +2,11 @@
   "intents": [
     {
       "tag": "salutation",
-      "patterns": ["Bonjour", "Salut", "Hey"],
-      "responses": ["Bonjour !", "Salut, comment puis-je vous aider ?"]
+      "patterns": ["Bonjour", "Salut", "Hey","coucou"],
+      "responses": ["Bonjour !"]
+
     },
+    
     {
       "tag": "aurevoir",
       "patterns": ["Au revoir", "Bye", "À bientôt"],
@@ -18,12 +20,678 @@
     {
       "tag": "aide",
       "patterns": ["J'ai besoin d'aide", "Pouvez-vous m'aider ?", "Aidez-moi"],
-      "responses": ["Bien sûr, comment puis-je vous aider ?", "Je suis là pour vous aider !"]
+      "responses": [
+        "Bien sûr, comment puis-je vous aider ?",
+        "Je suis là pour vous aider !"
+      ]
     },
     {
       "tag": "nom",
       "patterns": ["Quel est votre nom ?", "Comment vous appelez-vous ?"],
-      "responses": ["Je suis votre assistant virtuel.", "Je suis un chatbot, enchanté de vous rencontrer !"]
+      "responses": [
+        "Je suis votre assistant virtuel.",
+        "Je suis un chatbot, enchanté de vous rencontrer !"
+      ]
+    },
+    
+    {
+      "tag": "javascript_syntax",
+      "patterns": [
+        "Syntaxe_js"
+        ,"syntaxesjs"
+      ],
+      "responses": [
+        "JavaScript est sensible à la casse, les instructions se terminent souvent par un point-virgule. Exemple : let nom = 'Jean'; console.log(nom);"
+      ]
+    },
+    {
+      "tag": "javascript_variables",
+      "patterns": [
+        "Variables",
+        "Variable",
+        "VariablesJS"
+      ],
+      "responses": [
+        "Pour déclarer une variable en JavaScript, utilisez let, const ou var. Exemple : let age = 25; const pays = 'France'; var nom = 'Alice';",
+        "Les variables peuvent être déclarées avec let, const ou var. Exemple : let x = 10; const y = 20; var z = 30;"
+      ]
+    },
+    {
+      "tag": "javascript_data_types",
+      "patterns": [
+        "types de donnes",
+        "donnes en JS"
+      ],
+      "responses": [
+        "Types primitifs : string, number, boolean, null, undefined, symbol. Objets : tableaux, fonctions, objets personnalisés. Exemple : let texte = 'Bonjour'; let nombres = [1, 2, 3];"
+      ,
+        "Les types de données en JavaScript incluent : string, number, boolean, null, undefined, symbol. Exemple : let nom = 'Alice'; let age = 25;"
+      ]
+    },
+    {
+      "tag": "javascript_operators",
+      "patterns": [
+        "operations"
+      ],
+      "responses": [
+        "Les opérateurs permettent d’effectuer des opérations : +, -, *, /, ===, !=, &&, ||. Exemple : let total = 5 + 3; if (total === 8) { console.log('Exact'); }"
+      ,
+        "Les opérateurs en JavaScript incluent : arithmétiques (+, -, *, /), de comparaison (===, !==, <, >), logiques (&&, ||, !). Exemple : let x = 5; if (x > 3 && x < 10) { console.log('x est entre 3 et 10'); }"
+      ]
+    
+    },
+
+    {
+      "tag": "javascript_if_else",
+      "patterns": [
+        "condition",
+        "if else"
+      ],
+      "responses": [
+        "if permet d'exécuter une action si une condition est vraie, et else pour exécuter une autre action si la condition est fausse. Exemple : if (x > 5) { console.log('x est grand'); } else { console.log('x est petit'); }"
+      ]
+    },
+    {
+      "tag": "javascript_switch",
+      "patterns": [
+        "switch"
+      ],
+      "responses": [
+        "switch est utilisé pour comparer une variable avec différentes valeurs possibles. Exemple : switch (jour) { case 1: console.log('Lundi'); break; case 2: console.log('Mardi'); break; default: console.log('Jour inconnu'); }"
+      ]
+    },
+    {
+      "tag": "javascript_for",
+      "patterns": [
+        "for"
+      ],
+      "responses": [
+        "for est utilisé pour répéter un bloc de code un certain nombre de fois. Exemple : for (let i = 0; i < 5; i++) { console.log(i); }"
+      ]
+    },
+    {
+      "tag": "javascript_while",
+      "patterns": [
+        "while"
+      ],
+      "responses": [
+        "while exécute un bloc de code tant qu'une condition est vraie. Exemple : let i = 0; while (i < 5) { console.log(i); i++; }"
+      ]
+    },
+    {
+      "tag": "javascript_do_while",
+      "patterns": [
+        "do_while"
+      ],
+      "responses": [
+        "do...while exécute un bloc de code au moins une fois, puis vérifie la condition. Exemple : let i = 0; do { console.log(i); i++; } while (i < 5);"
+      ]
+    },
+    {
+      "tag": "javascript_arrays",
+      "patterns": [
+        "array",
+        "Tableaux"
+      ],
+      "responses": [
+        "Un tableau est une collection d'éléments. Exemple : let fruits = ['pomme', 'banane', 'cerise']; Accès : console.log(fruits[0]); // pomme"
+      ]
+    },
+    {
+      "tag": "javascript_objects",
+      "patterns": [
+        "objects",
+        "Objets en JS"
+      ],
+      "responses": [
+        "Un objet est une collection de paires clé-valeur. Exemple : let personne = { nom: 'Alice', age: 25 }; Accès : console.log(personne.nom); // Alice"
+      ]
+    },
+    {
+      "tag": "javascript_functions_overview",
+      "patterns": [
+        "Fonctions"
+      ],
+      "responses": [
+        "Une fonction est un bloc de code réutilisable. Exemple : function saluer() { console.log('Bonjour'); }"
+      ]
+    },
+    {
+      "tag": "javascript_function_parameters",
+      "patterns": [
+        "Paramètres de fonction"
+      ],
+      "responses": [
+        "Les fonctions peuvent accepter des paramètres. Exemple : function saluer(nom) { console.log('Bonjour ' + nom); } Appel : saluer('Alice');"
+      ]
+    },
+    {
+      "tag": "javascript_function_return",
+      "patterns": [
+        "function_return"
+      ],
+      "responses": [
+        "Utilisez return pour renvoyer une valeur. Exemple : function addition(a, b) { return a + b; } Appel : let resultat = addition(5, 3);"
+      ]
+    },
+    {
+      "tag": "javascript_function_scope",
+      "patterns": [
+        "function_scope"
+      ],
+      "responses": [
+        "La portée détermine où une variable est accessible. Exemple : function test() { let x = 10; } console.log(x); // Erreur"
+      ]
+    },
+    {
+      "tag": "javascript_function_closure",
+      "patterns": [
+        "function_closure"
+      ],
+      "responses": [
+        "Une closure est une fonction qui a accès à sa portée externe même après que la fonction externe ait terminé son exécution. Exemple : function createCounter() { let count = 0; return function() { count++; return count; }; }"
+      ]
+    },
+    {
+      "tag": "javascript_function_callback",
+      "patterns": [
+        "function_callback"
+      ],
+      "responses": [
+        "Un callback est une fonction passée en argument à une autre fonction. Exemple : setTimeout(() => { console.log('Salut'); }, 1000);"
+      ]
+    },
+    {
+      "tag": "javascript_function_arrow",
+      "patterns": [
+        "function_arrow"
+      ],
+      "responses": [
+        "Les fonctions fléchées sont une syntaxe concise pour écrire des fonctions. Exemple : const saluer = () => console.log('Bonjour');"
+      ]
+    },
+    {
+      "tag": "javascript_function_expression",
+      "patterns": [
+        "function_expression"
+      ],
+      "responses": [
+        "Une expression de fonction est une fonction sans nom. Exemple : const direBonjour = function() { console.log('Bonjour'); };"
+      ]
+    },
+   
+    {
+      "tag": "javascript_function_this",
+      "patterns": [
+        "function_this"
+      ],
+      "responses": [
+        "this fait référence à l'objet appelant. Exemple : const obj = { nom: 'Alice', saluer: function() { console.log(this.nom); } }; obj.saluer(); // Alice"
+      ]
+    },
+    {
+      "tag": "javascript_function_bind",
+      "patterns": [
+        "function_bind"
+      ],
+      "responses": [
+        "bind crée une nouvelle fonction avec un this fixé. Exemple : const obj = { nom: 'Alice' }; const saluer = function() { console.log(this.nom); }.bind(obj); saluer(); // Alice"
+      ]
+    },
+    
+    {
+      "tag": "javascript_function_apply",
+      "patterns": [
+        "function_apply"
+      ],
+      "responses": [
+        "apply appelle une fonction avec un this fixé et un tableau d'arguments. Exemple : function addition(a, b) { return a + b; } console.log(addition.apply(null, [5, 3])); // 8"
+      ]
+    },
+   
+    {
+      "tag": "javascript_function_prototype",
+      "patterns": [
+        "function_prototype"
+      ],
+      "responses": [
+        "Le prototype est un objet à partir duquel d'autres objets héritent. Exemple : function Personne(nom) { this.nom = nom; } Personne.prototype.saluer = function() { console.log('Bonjour ' + this.nom); };"
+      ]
+    },
+    {
+      "tag": "javascript_function_recursion",
+      "patterns": [
+        "function_recursion"
+      ],
+      "responses": [
+        "La récursion est une fonction qui s'appelle elle-même. Exemple : function factorielle(n) { return n === 0 ? 1 : n * factorielle(n - 1); }"
+      ]
+    },
+    {
+      "tag": "javascript_function_as_argument",
+      "patterns": [
+        "function_as_argument"
+      ],
+      "responses": [
+        "Vous pouvez passer une fonction comme argument. Exemple : function traiter(fonction) { fonction(); } traiter(() => console.log('Salut'));"
+      ]
+    },
+    {
+      "tag": "javascript_function_immediately_invoked",
+      "patterns": [
+        "function_immediately_invoked"
+      ],
+      "responses": [
+        "Une IIFE (Immediately Invoked Function Expression) est une fonction qui s'exécute immédiatement après sa définition. Exemple : (function() { console.log('Salut'); })();"
+      ]
+    },
+    
+    {
+      "tag": "javascript_function_rest_parameters",
+      "patterns": [
+        "function_rest_parameters"
+      ],
+      "responses": [
+        "Les paramètres rest permettent de passer un nombre variable d'arguments. Exemple : function addition(...nombres) { return nombres.reduce((a, b) => a + b, 0); }"
+      ]
+    },
+    {
+      "tag": "javascript_function_spread_operator",
+      "patterns": [
+        "function_spread_operator"
+      ],
+      "responses": [
+        "L'opérateur de propagation (...) permet d'étendre un tableau ou un objet. Exemple : let nombres = [1, 2, 3]; let plusNombres = [...nombres, 4, 5];"
+      ]
+    },
+    {
+      "tag": "javascript_function_default_parameters",
+      "patterns": [
+        "function_default_parameters"
+      ],
+      "responses": [
+        "Les paramètres par défaut sont utilisés si aucun argument n'est passé. Exemple : function saluer(nom = 'Inconnu') { console.log('Bonjour ' + nom); }"
+      ]
+    },
+    {
+      "tag": "javascript_function_hoisting",
+      "patterns": [
+        "function_hoisting"
+      ],
+      "responses": [
+        "Le hoisting déplace les déclarations de fonction en haut de leur portée. Exemple : saluer(); function saluer() { console.log('Bonjour'); }"
+      ]
+    },
+    {
+      "tag": "javascript_function_as_object",
+      "patterns": [
+        "function_as_object"
+      ],
+      "responses": [
+        "Les fonctions en JavaScript sont des objets de première classe. Exemple : function saluer() { console.log('Bonjour'); } console.log(typeof saluer); // 'function'"
+      ]
+    },
+    
+    {
+      "tag": "javascript_basics_overview",
+      "patterns": [
+        "Quelles sont les bases du langage JavaScript ?",
+        "Donnez un aperçu des bases de JavaScript",
+        "Bases JS"
+      ],
+      "responses": [
+        "Les bases de JavaScript incluent : la syntaxe, les variables (let, const, var), les types de données (primitifs et objets), les opérateurs (+, ===, &&, etc.), les structures de contrôle (if, switch, for, while) et les fonctions (déclarées, expressions, fléchées)."
+      ]
+    },
+    {
+      "tag": "javascript_advanced_overview",
+      "patterns": [
+        "Quelles sont les fonctionnalités avancées de JavaScript ?",
+        "Aperçu des fonctionnalités avancées de JavaScript",
+        "Fonctionnalités avancées JS"
+      ],
+      "responses": [
+        "Les fonctionnalités avancées incluent : les closures, le hoisting, le this, les prototypes, la récursion, les fonctions de rappel, les IIFE, les paramètres rest et spread, et la gestion des promesses."
+      ]
+    },
+    {
+      "tag": "javascript_promises",
+      "patterns": [
+        "promises"
+      ],
+      "responses": [
+        "Une promesse est un objet représentant l'achèvement ou l'échec d'une opération asynchrone. Exemple : let promesse = new Promise((resolve, reject) => { /* code asynchrone */ });"
+      ]
+    },
+    {
+      "tag": "javascript_async_await",
+      "patterns": [
+        "async/await",
+        "async"
+      ],
+      "responses": [
+        "async et await simplifient la gestion des promesses. Exemple : async function fetchData() { let response = await fetch(url); }"
+      ]
+    },
+    {
+      "tag": "javascript_error_handling",
+      "patterns": [
+        "error_handling",
+        "Gestion des erreurs JS",
+        "Try"
+      ],
+      "responses": [
+        "try...catch est utilisé pour gérer les exceptions. Exemple : try { /* code */ } catch (error) { console.error(error); }"
+      ]
+    },
+    {
+      "tag": "javascript_modules",
+      "patterns": [
+        "modules",
+        "Modules JS"
+      ],
+      "responses": [
+        "Les modules permettent de diviser le code en fichiers séparés. Exemple : export const nom = 'Alice'; import { nom } from './module.js';"
+      ]
+    },
+    {
+      "tag": "javascript_dom",
+      "patterns": [
+        "DOM"
+      ],
+      "responses": [
+        "Le DOM (Document Object Model) représente la structure d'un document HTML. Exemple : document.getElementById('id'); pour accéder à un élément."
+      ]
+    },
+    {
+      "tag": "javascript_events",
+      "patterns": [
+        "events"
+      ],
+      "responses": [
+        "addEventListener est utilisé pour écouter les événements. Exemple : element.addEventListener('click', () => { console.log('Clique !'); });"
+      ]
+    },
+    {
+      "tag": "javascript_ajax",
+      "patterns": [
+        "ajax"
+      ],
+      "responses": [
+        "AJAX permet de charger des données sans recharger la page. Exemple : fetch(url).then(response => response.json()).then(data => console.log(data));"
+      ]
+    },
+    {
+      "tag": "javascript_json",
+      "patterns": [
+        "json"
+      ],
+      "responses": [
+        "JSON (JavaScript Object Notation) est un format léger d'échange de données. Exemple : let json = JSON.stringify(obj); let obj = JSON.parse(json);"
+      ]
+    },
+    {
+      "tag": "javascript_local_storage",
+      "patterns": [
+        "local_storage"
+      ],
+      "responses": [
+        "localStorage permet de stocker des données dans le navigateur. Exemple : localStorage.setItem('cle', 'valeur'); let valeur = localStorage.getItem('cle');"
+      ]
+    },
+    {
+      "tag": "javascript_session_storage",
+      "patterns": [
+        "session_storage"
+      ],
+      "responses": [
+        "sessionStorage est similaire à localStorage, mais les données sont supprimées à la fermeture de l'onglet. Exemple : sessionStorage.setItem('cle', 'valeur');"
+      ]
+    },
+    {
+      "tag": "javascript_cookies",
+      "patterns": [
+        "cookies"
+      ],
+      "responses": [
+        "document.cookie permet de gérer les cookies. Exemple : document.cookie = 'nom=valeur; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/';"
+      ]
+    },
+    {
+      "tag": "javascript_fetch_api",
+      "patterns": [
+        "fetch"
+      ],
+      "responses": [
+        "fetch est utilisé pour faire des requêtes HTTP. Exemple : fetch(url).then(response => response.json()).then(data => console.log(data));"
+      ]
+    },
+   
+    {
+      "tag": "javascript_es6_features",
+      "patterns": [
+        "es6"
+      ],
+      "responses": [
+        "Les nouvelles fonctionnalités d'ES6 incluent : let et const, les fonctions fléchées, les classes, les modules, les promesses, les destructurations, et les templates littéraux."
+      ]
+    },
+    {
+      "tag": "javascript_classes",
+      "patterns": [
+        "classes"
+      ],
+      "responses": [
+        "Les classes sont des modèles pour créer des objets. Exemple : class Personne { constructor(nom) { this.nom = nom; } }"
+      ]
+    },
+    {
+      "tag": "javascript_inheritance",
+      "patterns": [
+        "inheritance"
+      ],
+      "responses": [
+        "L'héritage permet à une classe d'hériter des propriétés et méthodes d'une autre classe. Exemple : class Etudiant extends Personne { constructor(nom, etude) { super(nom); this.etude = etude; } }"
+      ]
+    },
+    {
+      "tag": "javascript_prototype_chain",
+      "patterns": [
+        "prototype"
+      ],
+      "responses": [
+        "La chaîne de prototypes est le mécanisme d'héritage en JavaScript. Exemple : function Animal() {} Animal.prototype.manger = function() { console.log('Manger'); };"
+      ]
+    },
+    {
+      "tag": "javascript_set_get",
+      "patterns": [
+        "set_get"
+      ],
+      "responses": [
+        "set et get permettent de définir des propriétés calculées. Exemple : get age() { return this._age; } set age(val) { this._age = val; }"
+      ]
+    },
+   
+   
+    {
+      "tag": "javascript_import_export",
+      "patterns": [
+        "import",
+        "export"
+      ],
+      "responses": [
+        "import est utilisé pour importer des modules, export pour les exporter. Exemple : export const nom = 'Alice'; import { nom } from './module.js';"
+      ]
+    },
+    {
+      "tag": "javascript_default_export",
+      "patterns": [
+        "default_expor"
+      ],
+      "responses": [
+        "export default permet d'exporter une seule valeur par défaut. Exemple : export default function() { console.log('Salut'); }"
+      ]
+    },
+   
+    {
+      "tag": "javascript_dynamic_import",
+      "patterns": [
+        "dynamic_import"
+      ],
+      "responses": [
+        "import() permet d'importer des modules dynamiquement. Exemple : import('./module.js').then(module => { module.fonction(); });"
+      ]
+    },
+    {
+      "tag": "javascript_babel",
+      "patterns": [
+        "babel"
+      ],
+      "responses": [
+        "Babel est un transpilateur qui convertit le code ES6+ en ES5 pour la compatibilité avec les anciens navigateurs."
+      ]
+    },
+   
+    {
+      "tag": "javascript_webpack",
+      "patterns": [
+        "Webpack"
+      ],
+      "responses": [
+        "Webpack est un module bundler qui regroupe les fichiers JavaScript et autres ressources pour le développement web. Exemple : webpack.config.js pour configurer le bundling."
+      ]
+    },
+    {
+      "tag": "javascript_testing",
+      "patterns": [
+        "testing"
+      ],
+      "responses": [
+        "Jest, Mocha et Chai sont des frameworks de test populaires pour JavaScript. Exemple : test('addition', () => { expect(addition(1, 2)).toBe(3); });"
+      ]
+    },
+    {
+      "tag": "javascript_libraries",
+      "patterns": [
+        "Bibliothèques",
+        "libraries"
+      ],
+      "responses": [
+        "jQuery, Lodash, Axios et D3.js sont des bibliothèques populaires. Exemple : import $ from 'jquery'; $(selector).action();"
+      ]
+    },
+    {
+      "tag": "javascript_frameworks",
+      "patterns": [
+        "Frameworks"
+      ],
+      "responses": [
+        "React, Vue.js, Angular et Svelte sont des frameworks populaires pour le développement d'applications web."
+      ]
+    },
+    {
+      "tag": "javascript_performance",
+      "patterns": [
+        "performance"
+      ],
+      "responses": [
+        "Utilisez le lazy loading, minimisez les requêtes HTTP, optimisez le DOM, utilisez des Web Workers pour le traitement en arrière-plan."
+      ]
+    },
+    {
+      "tag": "javascript_security",
+      "patterns": [
+        "security"
+      ],
+      "responses": [
+        "Utilisez HTTPS, validez les entrées utilisateur, évitez les injections XSS et CSRF, utilisez des Content Security Policies (CSP)."
+      ]
+    },
+
+    {
+      "tag": "javascript_best_practices",
+      "patterns": [
+        "best_practices"
+      ],
+      "responses": [
+        "Utilisez des noms de variables clairs, commentez le code, évitez les variables globales, utilisez const et let, et suivez les conventions de style."
+      ]
+    },
+    {
+      "tag": "javascript_future",
+      "patterns": [
+        "Avenir",
+        "future"
+      ],
+
+      "responses": [
+        "L'avenir de JavaScript inclut l'optimisation des performances, l'amélioration des outils de développement, et l'intégration avec d'autres technologies comme WebAssembly et les frameworks modernes."
+      ]
+    },
+    {
+      "tag": "javascript_resources",
+      "patterns": [
+        "Ressources"
+      ],
+      "responses": [
+        "Des ressources populaires incluent : MDN Web Docs, JavaScript.info, Eloquent JavaScript, et des plateformes comme freeCodeCamp, Codecademy et Udemy."
+      ]
+    },
+   
+  
+
+    {
+      "tag": "javascript_community",
+      "patterns": [
+        "Communaute"
+      ],
+      "responses": [
+        "Stack Overflow, GitHub, Reddit, et des groupes locaux ou des meetups sont d'excellents moyens de se connecter avec d'autres développeurs."
+      ]
+    },
+   
+   
+    
+    
+   
+    {
+      "tag": "javascript_prototypes",
+      "patterns": [
+        "Prototypes"
+      ],
+      "responses": [
+        "prototype est un objet à partir duquel d'autres objets héritent. Exemple : function Personne(nom) { this.nom = nom; } Personne.prototype.saluer = function() { console.log('Bonjour ' + this.nom); };"
+      ]
+    },
+    {
+      "tag": "javascript_recursion",
+      "patterns": [
+        "recursion"
+      ],
+      "responses": [
+        "La récursion est une fonction qui s'appelle elle-même. Exemple : function factorielle(n) { return n === 0 ? 1 : n * factorielle(n - 1); }"
+      ]
+    },
+    {
+      "tag": "javascript_callbacks",
+      "patterns": [
+        "callbacks"
+      ],
+      "responses": [
+        "Une fonction de rappel est une fonction passée en argument à une autre fonction. Exemple : setTimeout(() => { console.log('Salut'); }, 1000);"
+      ]
+    },
+   
+   
+    {
+      "tag": "javascript_function_spread_operator",
+      "patterns": [
+        "function_spread_operator"
+      ],
+      "responses": [
+        "L'opérateur de propagation (...) permet d'étendre un tableau ou un objet. Exemple : let nombres = [1, 2, 3]; let plusNombres = [...nombres, 4, 5];"
+      ]
     }
   ]
 }

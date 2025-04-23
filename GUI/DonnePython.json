@@ -1,0 +1,424 @@
+{
+  "intents": [
+    {
+      "tag": "python_syntax",
+      "patterns": [
+        "Expliquez la syntaxe de base de Python",
+        "Quelle est la syntaxe de Python ?",
+        "Syntaxe de base Python"
+      ],
+      "responses": [
+        "Python n'est pas sensible à la casse, et les instructions n'ont pas besoin de point-virgule. Exemple : `nom = 'Jean'\nprint(nom)`",
+        "Les blocs de code sont définis par l'indentation, et les variables sont déclarées directement sans mot-clé. Exemple : `if True:\n    x = 10\n    print(x)`"
+      ]
+    },
+    {
+      "tag": "python_variables",
+      "patterns": [
+        "Qu'est-ce qu'une variable en Python ?",
+        "Comment déclarer une variable en Python ?",
+        "Variables en Python"
+      ],
+      "responses": [
+        "En Python, une variable est créée en lui assignant une valeur avec le signe `=`. Exemple : `nom = 'Alice'; age = 25`",
+        "Les variables en Python n'ont pas besoin d'être déclarées explicitement. Exemple : `x = 10; texte = 'Bonjour'`"
+      ]
+    },
+    {
+      "tag": "python_data_types",
+      "patterns": [
+        "Quels sont les types de données en Python ?",
+        "Types primitifs et objets en Python",
+        "Types de données en Python"
+      ],
+      "responses": [
+        "Les types de données en Python incluent : `int`, `float`, `str`, `bool`, `list`, `tuple`, `dict`, `set`. Exemple : `age = 25; nom = 'Alice'; nombres = [1, 2, 3]`",
+        "Python prend en charge des types comme : `int`, `float`, `str`, `bool`, et des structures comme `list`, `tuple`, `dict`. Exemple : `x = 10; texte = 'Bonjour'; tableau = [1, 2, 3]`"
+      ]
+    },
+    {
+      "tag": "python_operators",
+      "patterns": [
+        "Quels sont les opérateurs en Python ?",
+        "Liste des opérateurs en Python",
+        "Opérateurs Python"
+      ],
+      "responses": [
+        "Les opérateurs en Python incluent : arithmétiques (`+`, `-`, `*`, `/`), de comparaison (`==`, `!=`, `<`, `>`), logiques (`and`, `or`, `not`). Exemple : `total = 5 + 3; if total == 8: print('Exact')`",
+        "Les opérateurs permettent d’effectuer des opérations : `+`, `-`, `*`, `/`, `==`, `!=`, `and`, `or`. Exemple : `x = 5; if x > 3 and x < 10: print('x est entre 3 et 10')`"
+      ]
+    },
+    {
+      "tag": "python_if_else",
+      "patterns": [
+        "Qu'est-ce qu'une structure if en Python ?",
+        "Expliquez la structure if-else en Python",
+        "condition  Python",
+        "if-else Python"
+      ],
+      "responses": [
+        [
+          "`if` permet d'exécuter une action si une condition est vraie, et `else` pour exécuter une autre action si la condition est fausse. Exemple : `if x > 5: print('x est grand') else: print('x est petit')`",
+          "La structure `if-elif-else` permet de gérer plusieurs conditions. Exemple : `if x > 5: print('x est grand') elif x == 5: print('x est moyen') else: print('x est petit')`"
+        ]
+      ]
+    },
+
+    {
+      "tag": "python_switch_alternative",
+      "patterns": [
+        "Comment implémenter un switch en Python ?",
+        "Existe-t-il une structure switch en Python ?"
+      ],
+      "responses": [
+        "Python n'a pas de structure `switch` native, mais vous pouvez utiliser un dictionnaire pour simuler un comportement similaire. Exemple : `def switch(case): return {1: 'Lundi', 2: 'Mardi'}.get(case, 'Jour inconnu')`",
+        "Python n'a pas de structure `switch` native, mais vous pouvez utiliser un dictionnaire pour simuler un comportement similaire. Exemple : `def switch(case): return {1: 'Lundi', 2: 'Mardi'}.get(case, 'Jour inconnu')`"
+      ]
+    },
+    {
+      "tag": "python_for_loop",
+      "patterns": [
+        "Qu'est-ce qu'une boucle for en Python ?",
+        "Expliquez la boucle for en Python"
+      ],
+      "responses": [
+        "`for` est utilisé pour itérer sur une séquence (liste, tuple, chaîne, etc.). Exemple : `for i in range(5): print(i)`"
+      ]
+    },
+    {
+      "tag": "python_while_loop",
+      "patterns": [
+        "Qu'est-ce qu'une boucle while en Python ?",
+        "Expliquez la boucle while en Python"
+      ],
+      "responses": [
+        "`while` exécute un bloc de code tant qu'une condition est vraie. Exemple : `i = 0\nwhile i < 5:\n    print(i)\n    i += 1`"
+      ]
+    },
+    {
+      "tag": "python_functions_overview",
+      "patterns": [
+        "Qu'est-ce qu'une fonction en Python ?",
+        "Fonctions en Python",
+        "Définition de fonction Python"
+      ],
+      "responses": [
+        "Une fonction est un bloc de code réutilisable. Exemple : `def saluer(): print('Bonjour')`"
+      ]
+    },
+    {
+      "tag": "python_function_parameters",
+      "patterns": [
+        "Comment passer des paramètres à une fonction en Python ?",
+        "Fonctions avec paramètres Python",
+        "Paramètres de fonction Python"
+      ],
+      "responses": [
+        "Les fonctions peuvent accepter des paramètres. Exemple : `def saluer(nom): print('Bonjour ' + nom)` Appel : `saluer('Alice')`"
+      ]
+    },
+    {
+      "tag": "python_function_return",
+      "patterns": [
+        "Comment retourner une valeur d'une fonction en Python ?",
+        "Fonctions avec retour Python",
+        "Retour de fonction Python"
+      ],
+      "responses": [
+        "Utilisez `return` pour renvoyer une valeur. Exemple : `def addition(a, b): return a + b` Appel : `resultat = addition(5, 3)`"
+      ]
+    },
+    {
+      "tag": "python_function_scope",
+      "patterns": [
+        "Qu'est-ce que la portée d'une fonction en Python ?",
+        "Portée des fonctions Python",
+        "Fonctions et portée Python"
+      ],
+      "responses": [
+        "La portée détermine où une variable est accessible. Exemple : `def test(): x = 10\nprint(x)  # Erreur, x n'est pas défini en dehors de la fonction`"
+      ]
+    },
+    {
+      "tag": "python_function_closure",
+      "patterns": [
+        "Qu'est-ce qu'une closure en Python ?",
+        "Closures en Python",
+        "Fonctions et closures Python"
+      ],
+      "responses": [
+        "Une closure est une fonction qui a accès à sa portée externe même après que la fonction externe ait terminé son exécution. Exemple : `def create_counter(): count = 0\ndef increment():\n    nonlocal count\n    count += 1\n    return count\nreturn increment`"
+      ]
+    },
+    {
+      "tag": "python_function_lambda",
+      "patterns": [
+        "Qu'est-ce qu'une fonction lambda en Python ?",
+        "Fonctions lambda Python",
+        "Syntaxe des fonctions lambda Python"
+      ],
+      "responses": [
+        "Les fonctions lambda sont des fonctions anonymes en une seule ligne. Exemple : `addition = lambda x, y: x + y`"
+      ]
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    [
+      {
+        "tag": "flet",
+        "patterns": ["Qu'est-ce que Flet ?", "Explique Flet", "Utiliser Flet"],
+        "responses": [
+          "Flet est un framework Python pour créer des interfaces utilisateurs.\n```python\nimport flet as ft\nft.app(target=main)\n```"
+        ]
+      },
+      {
+        "tag": "Card",
+        "patterns": ["C'est quoi une Card ?", "Utiliser une Card", "Exemple de Card"],
+        "responses": [
+          "Une `Card` permet de présenter des contenus dans un conteneur stylisé.\n```python\nft.Card(content=ft.Text('Ma carte'))\n```"
+        ]
+      },
+      {
+        "tag": "Column",
+        "patterns": ["Disposition en colonne", "Utiliser Column", "Alignement vertical"],
+        "responses": [
+          "Empilez les éléments verticalement avec `Column`.\n```python\nft.Column([ft.Text('Texte 1'), ft.Text('Texte 2')])\n```"
+        ]
+      },
+      {
+        "tag": "Container",
+        "patterns": ["Créer un conteneur", "Style container", "Conteneur stylisé"],
+        "responses": [
+          "`Container` permet d'appliquer du style à un widget.\n```python\nft.Container(content=ft.Text('Contenu'), bgcolor='blue')\n```"
+        ]
+      },
+      {
+        "tag": "CupertinoListTile",
+        "patterns": ["ListTile iOS", "Style Cupertino", "Tile Cupertino"],
+        "responses": [
+          "Composant `CupertinoListTile` inspiré du style iOS.\n```python\nft.CupertinoListTile(title=ft.Text('Item iOS'))\n```"
+        ]
+      },
+      {
+        "tag": "DataTable",
+        "patterns": ["Créer un tableau", "Utiliser DataTable", "Affichage tabulaire"],
+        "responses": [
+          "Affichez des données dans un tableau structuré.\n```python\nft.DataTable(\n  columns=[ft.DataColumn(label=ft.Text('Nom'))],\n  rows=[ft.DataRow(cells=[ft.DataCell(ft.Text('Alice'))])]\n)\n```"
+        ]
+      },
+      {
+        "tag": "Dismissible",
+        "patterns": ["Suppression par glissement", "Glisser pour effacer", "Swipe pour supprimer"],
+        "responses": [
+          "Glissez pour supprimer un élément avec `Dismissible`.\n```python\nft.Dismissible(content=ft.Text('Supprimez-moi'), key='unique')\n```"
+        ]
+      },
+      {
+        "tag": "Divider",
+        "patterns": ["Créer une séparation", "Ligne horizontale", "Ajouter Divider"],
+        "responses": [
+          "Utilisez `Divider` pour séparer les sections visuellement.\n```python\nft.Divider(thickness=2)\n```"
+        ]
+      },
+      {
+        "tag": "ExpansionPanelList",
+        "patterns": ["Liste extensible", "Panels dynamiques", "Dérouler des sections"],
+        "responses": [
+          "Liste de panneaux extensibles avec `ExpansionPanelList`.\n```python\nft.ExpansionPanelList(\n  panels=[\n    ft.ExpansionPanel(header=ft.Text('Titre'), content=ft.Text('Contenu'))\n  ]\n)\n```"
+        ]
+      },
+      {
+        "tag": "ExpansionTile",
+        "patterns": ["Tile extensible", "Détail déroulant", "Afficher plus"],
+        "responses": [
+          "Utilisez `ExpansionTile` pour afficher un contenu caché.\n```python\nft.ExpansionTile(title=ft.Text('Plus d’infos'), children=[ft.Text('Contenu caché')])\n```"
+        ]
+      },
+      {
+        "tag": "GridView",
+        "patterns": ["Disposition en grille", "Afficher en colonnes", "Créer GridView"],
+        "responses": [
+          "`GridView` permet de présenter des éléments en grille.\n```python\nft.GridView(runs_count=2, controls=[ft.Text('Item 1'), ft.Text('Item 2')])\n```"
+        ]
+      },
+      {
+        "tag": "ListTile",
+        "patterns": ["Créer un ListTile", "Item avec icône", "Liste avec titre"],
+        "responses": [
+          "`ListTile` combine titre, sous-titre et icône.\n```python\nft.ListTile(title=ft.Text('Titre'), subtitle=ft.Text('Sous-titre'))\n```"
+        ]
+      },
+      {
+        "tag": "ListView",
+        "patterns": ["Liste défilable", "Afficher une liste", "Scroll vertical"],
+        "responses": [
+          "`ListView` crée une liste verticale défilante.\n```python\nft.ListView([ft.Text('Élément 1'), ft.Text('Élément 2')])\n```"
+        ]
+      },
+      {
+        "tag": "Page",
+        "patterns": ["Qu'est-ce qu'une Page ?", "Utiliser Page", "Créer une Page"],
+        "responses": [
+          "La `Page` est le conteneur principal dans Flet.\n```python\ndef main(page: ft.Page):\n    page.add(ft.Text('Bonjour'))\n```"
+        ]
+      },
+      {
+        "tag": "Pagelet",
+        "patterns": ["Sous-page", "Petit composant de page", "Pagelet"],
+        "responses": [
+          "`Pagelet` est utilisé pour représenter une sous-partie de la `Page`.\n```python\nft.Pagelet(content=ft.Text('Sous-élément'))\n```"
+        ]
+      },
+      {
+        "tag": "Placeholder",
+        "patterns": ["Espace temporaire", "Composant vide", "Utiliser Placeholder"],
+        "responses": [
+          "`Placeholder` sert à indiquer une zone vide temporaire.\n```python\nft.Placeholder(height=50, width=100)\n```"
+        ]
+      },
+      {
+        "tag": "ReorderableListView",
+        "patterns": ["Liste réorganisable", "Drag and drop", "Réordonner la liste"],
+        "responses": [
+          "Réorganisez les éléments dynamiquement avec `ReorderableListView`.\n```python\nft.ReorderableListView([ft.Text('A'), ft.Text('B')])\n```"
+        ]
+      },
+      {
+        "tag": "ResponsiveRow",
+        "patterns": ["Disposition responsive", "Row adaptatif", "Grille responsive"],
+        "responses": [
+          "`ResponsiveRow` ajuste l'affichage selon la taille de l'écran.\n```python\nft.ResponsiveRow(columns=12, controls=[ft.Text('Responsive')])\n```"
+        ]
+      },
+      {
+        "tag": "Row",
+        "patterns": ["Disposition en ligne", "Aligner horizontalement", "Utiliser Row"],
+        "responses": [
+          "`Row` aligne les éléments horizontalement.\n```python\nft.Row([ft.Text('Gauche'), ft.Text('Droite')])\n```"
+        ]
+      },
+      {
+        "tag": "SafeArea",
+        "patterns": ["Zone sûre", "Éviter les bords", "SafeArea utile ?"],
+        "responses": [
+          "`SafeArea` protège le contenu contre les zones inaccessibles (notch, status bar).\n```python\nft.SafeArea(content=ft.Text('Protégé'))\n```"
+        ]
+      },
+      {
+        "tag": "Stack",
+        "patterns": ["Superposition d'éléments", "Utiliser Stack", "Affichage empilé"],
+        "responses": [
+          "`Stack` permet d'empiler les widgets les uns sur les autres.\n```python\nft.Stack([ft.Text('Dessous'), ft.Text('Dessus')])\n```"
+        ]
+      },
+      {
+        "tag": "Tabs",
+        "patterns": ["Créer des onglets", "Navigation par onglet", "Utiliser Tabs"],
+        "responses": [
+          "`Tabs` permet de basculer entre plusieurs vues.\n```python\nft.Tabs(tabs=[ft.Tab(text='Tab 1'), ft.Tab(text='Tab 2')])\n```"
+        ]
+      },
+      {
+        "tag": "VerticalDivider",
+        "patterns": ["Séparateur vertical", "Divider en hauteur", "Créer VerticalDivider"],
+        "responses": [
+          "`VerticalDivider` crée une ligne verticale entre les éléments.\n```python\nft.VerticalDivider(width=1)\n```"
+        ]
+      },
+      {
+        "tag": "View",
+        "patterns": ["Créer une vue", "Page personnalisée", "Utiliser View"],
+        "responses": [
+          "`View` permet de structurer des pages indépendantes dans Flet.\n```python\nft.View(route='/home', controls=[ft.Text('Bienvenue')])\n```"
+        ]
+      }
+    ]
+    ,
+    [
+      {
+        "tag": "AppBar",
+        "patterns": ["Créer une AppBar", "Barre supérieure", "Utiliser AppBar"],
+        "responses": [
+          "`AppBar` est une barre de navigation en haut de l'application.\n```python\nft.AppBar(title=ft.Text('Ma page'))\n```"
+        ]
+      },
+      {
+        "tag": "BottomAppBar",
+        "patterns": ["Créer BottomAppBar", "Barre inférieure", "Utiliser BottomAppBar"],
+        "responses": [
+          "`BottomAppBar` s'affiche en bas de l'application.\n```python\nft.BottomAppBar(content=ft.Text('Navigation basse'))\n```"
+        ]
+      },
+      {
+        "tag": "CupertinoAppBar",
+        "patterns": ["AppBar style iOS", "Cupertino AppBar", "Barre Cupertino"],
+        "responses": [
+          "`CupertinoAppBar` est une AppBar avec un style iOS.\n```python\nft.CupertinoAppBar(title=ft.Text('iOS AppBar'))\n```"
+        ]
+      },
+      {
+        "tag": "CupertinoNavigationBar",
+        "patterns": ["Navigation iOS", "Barre navigation Cupertino", "CupertinoNavigationBar"],
+        "responses": [
+          "NavigationBar version iOS avec `CupertinoNavigationBar`.\n```python\nft.CupertinoNavigationBar(middle=ft.Text('Accueil'))\n```"
+        ]
+      },
+      {
+        "tag": "MenuBar",
+        "patterns": ["Créer un menu", "Utiliser MenuBar", "Barre de menu"],
+        "responses": [
+          "`MenuBar` permet d'ajouter des options de menu en haut.\n```python\nft.MenuBar(items=[ft.MenuItem(text='Fichier')])\n```"
+        ]
+      },
+      {
+        "tag": "NavigationBar",
+        "patterns": ["Navigation principale", "Utiliser NavigationBar", "Barre de navigation"],
+        "responses": [
+          "`NavigationBar` permet de naviguer entre les sections de l'app.\n```python\nft.NavigationBar(destinations=[ft.NavigationDestination(label='Accueil')])\n```"
+        ]
+      },
+      {
+        "tag": "NavigationDrawer",
+        "patterns": ["Drawer latéral", "Menu déroulant", "Utiliser NavigationDrawer"],
+        "responses": [
+          "`NavigationDrawer` est un menu latéral.\n```python\nft.NavigationDrawer(controls=[ft.Text('Lien 1')])\n```"
+        ]
+      },
+      {
+        "tag": "NavigationRail",
+        "patterns": ["Rail de navigation", "Navigation verticale", "Utiliser NavigationRail"],
+        "responses": [
+          "`NavigationRail` offre une navigation verticale compacte.\n```python\nft.NavigationRail(destinations=[ft.NavigationDestination(label='Item')])\n```"
+        ]
+      }
+    ]
+    
+  ]
+}

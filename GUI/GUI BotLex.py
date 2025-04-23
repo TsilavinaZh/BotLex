@@ -5,11 +5,8 @@ import json, os, re, random, traceback
 import numpy as np
 from datetime import datetime
 
-
 MUTE = False
 SESSION_LOG = []
-
-
 
 def load_data(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
@@ -45,9 +42,9 @@ def predict_multiple_intents(text, intents, vocab, threshold=0.3):
                 break
     return list(found_tags)
 
-def detect_python_code(text):
-    keywords = ["def", "print", "for", "while", "if", "else", "elif", "return", "import", "class"]
-    return any(kw in text for kw in keywords)
+# def detect_python_code(text):
+#     keywords = ["def", "print", "for", "while", "if", "else", "elif", "return", "import", "class"]
+#     return any(kw in text for kw in keywords)
 
 def try_exec(code):
     try:
@@ -103,35 +100,65 @@ def save_log():
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(SESSION_LOG, f, indent=2, ensure_ascii=False)
 
+
 class ChatbotApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Assistant IA Professionnel")
-        self.root.configure(bg="#1e1e1e")
-        self.root.geometry("800x600")
+        self.root.title("BotLex - Assistant IA")
+        self.root.geometry("900x650")
+        self.root.configure(bg="#0f111a")
 
         self.data = load_data("data.json")
         self.intents = self.data["intents"]
         self.vocab = build_vocab(self.intents)
 
-        self.text_area = scrolledtext.ScrolledText(root, wrap=tk.WORD, bg="#252526", fg="#ffffff", font=("Segoe UI", 12))
-        self.text_area.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
+        # En-tête
+        header = tk.Label(root, text="BotLex - Assistant IA", 
+                          font=("Segoe UI Semibold", 16), bg="#0f111a", fg="#00ffd5", pady=20)
+        header.pack()
+
+        # Zone de texte
+        self.text_area = scrolledtext.ScrolledText(
+            root, wrap=tk.WORD, bg="#1e1e2e", fg="#f5f5f5",
+            font=("Consolas", 13), padx=10, pady=10,
+            borderwidth=0, highlightthickness=0
+        )
+        self.text_area.pack(padx=20, pady=(0,10), fill=tk.BOTH, expand=True)
         self.text_area.config(state=tk.DISABLED)
 
-        self.entry = tk.Entry(root, font=("Segoe UI", 12), bg="#333333", fg="#ffffff", insertbackground="#ffffff")
-        self.entry.pack(padx=10, pady=(0, 10), fill=tk.X)
+        # Entrée utilisateur
+        self.entry = tk.Entry(root, font=("Segoe UI", 13), bg="#2d2d3a", fg="#ffffff",
+                              insertbackground="#ffffff", borderwidth=0, relief=tk.FLAT)
+        self.entry.pack(padx=20, pady=(0, 10), fill=tk.X)
         self.entry.bind("<Return>", self.send)
 
+        # Boutons
+        button_frame = tk.Frame(root, bg="#0f111a")
+        button_frame.pack(pady=5)
 
-        button_frame = tk.Frame(root, bg="#1e1e1e")
-        button_frame.pack(fill=tk.X)
+        style = ttk.Style()
+        style.theme_use("default")
+        style.configure("TButton",
+                        font=("Segoe UI", 10),
+                        foreground="#ffffff",
+                        background="#3c3f58",
+                        borderwidth=0,
+                        focusthickness=3,
+                        focuscolor="none",
+                        padding=6)
+        style.map("TButton",
+                  background=[("active", "#4d5172")])
 
-        ttk.Style().configure("TButton", font=("Segoe UI", 10), padding=6)
-        ttk.Button(button_frame, text="Envoyer", command=self.send).pack(side=tk.LEFT, padx=5)
-        ttk.Button(button_frame, text="Aide", command=self.show_help).pack(side=tk.LEFT, padx=5)
-        ttk.Button(button_frame, text="Mute", command=self.mute).pack(side=tk.LEFT, padx=5)
-        ttk.Button(button_frame, text="Unmute", command=self.unmute).pack(side=tk.LEFT, padx=5)
-        ttk.Button(button_frame, text="Quitter", command=self.quit).pack(side=tk.RIGHT, padx=5)
+        buttons = [
+            ("Envoyer", self.send),
+            ("Aide", self.show_help),
+            ("Mute", self.mute),
+            ("Unmute", self.unmute),
+            ("Quitter", self.quit)
+        ]
+
+        for label, command in buttons:
+            ttk.Button(button_frame, text=label, command=command).pack(side=tk.LEFT, padx=6)
 
     def print_to_chat(self, sender, message):
         self.text_area.config(state=tk.NORMAL)
@@ -168,8 +195,8 @@ class ChatbotApp:
                 response = get_example(parts[1], self.intents)
             else:
                 response = "Utilisez : !example <tag>"
-        elif detect_python_code(user_input):
-            response = debug_and_correct(user_input)
+        # elif detect_python_code(user_input):
+        #     response = debug_and_correct(user_input)
         else:
             tags = predict_multiple_intents(user_input, self.intents, self.vocab)
             if tags:
@@ -182,23 +209,22 @@ class ChatbotApp:
 
         SESSION_LOG.append({"user": user_input, "ai": response})
         if not MUTE:
-            self.print_to_chat(" AI", response)
+            self.print_to_chat("🤖 AI", response)
 
     def show_help(self):
-        self.print_to_chat(" AI", show_help())
+        self.print_to_chat("🤖 AI", show_help())
 
     def mute(self):
         global MUTE
         MUTE = True
-        self.print_to_chat(" AI", "🔇 Mode silencieux activé.")
-        messagebox.showinfo("Mute Success","Unmute Success")
+        self.print_to_chat("🤖 AI", "🔇 Mode silencieux activé.")
+        messagebox.showinfo("Mute", "Mode silencieux activé.")
 
     def unmute(self):
         global MUTE
         MUTE = False
-        self.print_to_chat(" AI", "🔊 Mode silencieux désactivé.")
-        messagebox.showinfo("Unmute Success","Unmute Success")
-        
+        self.print_to_chat("🤖 AI", "🔊 Mode silencieux désactivé.")
+        messagebox.showinfo("Unmute", "Mode silencieux désactivé.")
 
     def quit(self):
         save_log()
